@@ -2,30 +2,27 @@
 {
     static void Main()
     {
-        Console.Write("Please enter a series of numbers, input 0 to quit: ");
-        int endSeq = 0;
+        Console.Write("Please enter the number of values you'd like to use: ");
+        int limit = int.Parse(Console.ReadLine());
         int maxVal = int.MinValue;
         int minVal = int.MaxValue;
-        for (int a = 1; a != endSeq;)
+        for (int a = 0; a < limit; a++)
         {
             int num = int.Parse(Console.ReadLine());
 
-            if (num == 0)
-            {
-                a = 0;
-            }
-
-            if (num > maxVal&&num!=0)
+            if (num > maxVal)
             {
                 maxVal = num;
             }
 
-            if (num < minVal&&num!=0)
+            if (num < minVal)
             {
                 minVal = num;
             }
+
+
         }
 
-        Console.WriteLine("The maximum Value entered is "+maxVal+ ", and the minimum value entered is "+minVal);
+        Console.WriteLine("The maximum Value entered is " + maxVal + ", and the minimum value entered is " + minVal);
     }
 }
